@@ -1,5 +1,5 @@
 <?php
 
-namespace Unirest;
+namespace RestUni;
 
 class Exception extends \Exception {}

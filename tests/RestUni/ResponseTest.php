@@ -1,11 +1,11 @@
 <?php
 
-namespace Unirest\Response\Test;
+namespace RestUni\Response\Test;
 
-use Unirest\Request as Request;
-use Unirest\Response as Response;
+use RestUni\Request as Request;
+use RestUni\Response as Response;
 
-require __DIR__ . '/../../src/Unirest.php';
+require __DIR__ . '/../../src/RestUni.php';
 
 class UnirestResponseTest extends \PHPUnit_Framework_TestCase
 {

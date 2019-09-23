@@ -6,8 +6,8 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "Thizer",
-      "email": "thizerdev@gmail.com"
+      "name": "Braghim Sistemas",
+      "email": "braghim.sistemas@gmail.com"
     },
     {
       "name": "Mashape",
@@ -27,10 +27,10 @@
   },
   "autoload": {
     "psr-0": {
-      "Unirest\\": "src/"
+      "RestUni\\": "src/"
     }
   },
   "support": {
-    "email": "opensource@mashape.com"
+    "email": "braghim.sistemas@gmail.com"
   }
 }

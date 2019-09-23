@@ -1,12 +1,12 @@
 <?php
 
-namespace Unirest\Request\Test;
+namespace RestUni\Request\Test;
 
-use Unirest\Request as Request;
+use RestUni\Request as Request;
 
-require __DIR__ . '/../../src/Unirest.php';
+require __DIR__ . '/../../src/RestUni.php';
 
-class UnirestRequestTest extends \PHPUnit_Framework_TestCase
+class RestUniRequestTest extends \PHPUnit_Framework_TestCase
 {
     // Generic
     public function testCurlOpts()

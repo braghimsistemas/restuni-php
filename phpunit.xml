@@ -5,7 +5,7 @@
   </logging>
 
   <testsuites>
-    <testsuite name="Unirest Test Suite">
+    <testsuite name="RestUni Test Suite">
       <directory>./tests</directory>
     </testsuite>
   </testsuites>
