@@ -1,5 +1,5 @@
 {
-  "name": "braghimsistemas/restuni-php",
+  "name": "braghim-sistemas/restuni-php",
   "description": "RestUni PHP",
   "keywords": ["rest", "curl", "http", "https", "client"],
   "type": "library",
