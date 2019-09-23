@@ -29,7 +29,7 @@ To install restuni-php with Composer, just add the following to your `composer.j
 ```json
 {
     "require-dev": {
-        "braghimsistemas/restuni-php": "^5"
+        "braghimsistemas/restuni-php": "^7"
     }
 }
 ```

@@ -1,6 +1,6 @@
 {
   "name": "braghimsistemas/restuni-php",
-  "description": "Unirest PHP",
+  "description": "RestUni PHP",
   "keywords": ["rest", "curl", "http", "https", "client"],
   "type": "library",
   "license": "MIT",
