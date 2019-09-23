@@ -33,18 +33,34 @@ class Response {
     }
   }
 
+  /**
+   *
+   * @return type
+   */
   public function getCode() {
     return $this->code;
   }
 
+  /**
+   *
+   * @return type
+   */
   public function getRawBody() {
     return $this->rawBody;
   }
 
+  /**
+   *
+   * @return type
+   */
   public function getBody() {
     return $this->body;
   }
 
+  /**
+   *
+   * @return type
+   */
   public function getHeaders() {
     return $this->headers;
   }
