@@ -1,5 +1,5 @@
 {
-  "name": "braghimsistemas/unirest-php",
+  "name": "braghimsistemas/restuni-php",
   "description": "Unirest PHP",
   "keywords": ["rest", "curl", "http", "https", "client"],
   "type": "library",

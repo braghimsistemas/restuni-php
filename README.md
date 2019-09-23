@@ -1,16 +1,8 @@
-# Unirest for PHP [![Build Status][travis-image]][travis-url] [![version][packagist-version]][packagist-url]
+# RESTUNI PHP
 
-[![Downloads][packagist-downloads]][packagist-url]
-[![Code Climate][codeclimate-quality]][codeclimate-url]
-[![Coverage Status][codeclimate-coverage]][codeclimate-url]
-[![Dependencies][versioneye-image]][versioneye-url]
-[![Gitter][gitter-image]][gitter-url]
-[![License][packagist-license]][license-url]
+## The original package (UNIREST) seems to be abandoned. We will try to keep it up to date here.
 
-![][unirest-logo]
-
-
-[Unirest](http://unirest.io) is a set of lightweight HTTP libraries available in multiple languages, built and maintained by [Mashape](https://github.com/Mashape), who also maintain the open-source API Gateway [Kong](https://github.com/Mashape/kong). 
+[Unirest](http://unirest.io) is a set of lightweight HTTP libraries available in multiple languages, built and maintained by [Mashape](https://github.com/Mashape), who also maintain the open-source API Gateway [Kong](https://github.com/Mashape/kong).
 
 
 ## Features
@@ -32,12 +24,12 @@
 
 ### Using [Composer](https://getcomposer.org)
 
-To install unirest-php with Composer, just add the following to your `composer.json` file:
+To install restuni-php with Composer, just add the following to your `composer.json` file:
 
 ```json
 {
     "require-dev": {
-        "mashape/unirest-php": "3.*"
+        "braghimsistemas/restuni-php": "^5"
     }
 }
 ```
@@ -45,13 +37,13 @@ To install unirest-php with Composer, just add the following to your `composer.j
 or by running the following command:
 
 ```shell
-composer require mashape/unirest-php
+composer require braghimsistemas/restuni-php
 ```
 
 This will get you the latest version of the reporter and install it. If you do want the master, untagged, version you may use the command below:
 
 ```shell
-composer require mashape/php-test-reporter dev-master
+composer require braghimsistemas/php-test-reporter dev-master
 ```
 
 Composer installs autoloader at `./vendor/autoloader.php`. to include the library in your script, add:
@@ -62,18 +54,18 @@ require_once 'vendor/autoload.php';
 
 If you use Symfony2, autoloader has to be detected automatically.
 
-*You can see this library on [Packagist](https://packagist.org/packages/mashape/unirest-php).*
+*You can see this library on [Packagist](https://packagist.org/packages/braghimsistemas/restuni-php).*
 
 ### Install from source
 
 Download the PHP library from Github, then include `Unirest.php` in your script:
 
 ```shell
-git clone git@github.com:Mashape/unirest-php.git 
+git clone git@github.com:Mashape/restuni-php.git
 ```
 
 ```php
-require_once '/path/to/unirest-php/src/Unirest.php';
+require_once '/path/to/restuni-php/src/Unirest.php';
 ```
 
 ## Usage
@@ -100,7 +92,7 @@ A JSON Request can be constructed using the `Unirest\Request\Body::Json` helper:
 
 ```php
 $headers = array('Accept' => 'application/json');
-$data = array('name' => 'ahmad', 'company' => 'mashape');
+$data = array('name' => 'ahmad', 'company' => 'braghimsistemas');
 
 $body = Unirest\Request\Body::json($data);
 
@@ -108,7 +100,7 @@ $response = Unirest\Request::post('http://mockbin.com/request', $headers, $body)
 ```
 
 **Notes:**
-- `Content-Type` headers will be automatically set to `application/json` 
+- `Content-Type` headers will be automatically set to `application/json`
 - the data variable will be processed through [`json_encode`](http://php.net/manual/en/function.json-encode.php) with default values for arguments.
 - an error will be thrown if the [JSON Extension](http://php.net/manual/en/book.json.php) is not available.
 
@@ -118,14 +110,14 @@ A typical Form Request can be constructed using the `Unirest\Request\Body::Form`
 
 ```php
 $headers = array('Accept' => 'application/json');
-$data = array('name' => 'ahmad', 'company' => 'mashape');
+$data = array('name' => 'ahmad', 'company' => 'braghimsistemas');
 
 $body = Unirest\Request\Body::form($data);
 
 $response = Unirest\Request::post('http://mockbin.com/request', $headers, $body);
 ```
 
-**Notes:** 
+**Notes:**
 - `Content-Type` headers will be automatically set to `application/x-www-form-urlencoded`
 - the final data array will be processed through [`http_build_query`](http://php.net/manual/en/function.http-build-query.php) with default values for arguments.
 
@@ -135,14 +127,14 @@ A Multipart Request can be constructed using the `Unirest\Request\Body::Multipar
 
 ```php
 $headers = array('Accept' => 'application/json');
-$data = array('name' => 'ahmad', 'company' => 'mashape');
+$data = array('name' => 'ahmad', 'company' => 'braghimsistemas');
 
 $body = Unirest\Request\Body::multipart($data);
 
 $response = Unirest\Request::post('http://mockbin.com/request', $headers, $body);
 ```
 
-**Notes:** 
+**Notes:**
 
 - `Content-Type` headers will be automatically set to `multipart/form-data`.
 - an auto-generated `--boundary` will be set.
@@ -153,7 +145,7 @@ simply add an array of files as the second argument to to the `Multipart` helper
 
 ```php
 $headers = array('Accept' => 'application/json');
-$data = array('name' => 'ahmad', 'company' => 'mashape');
+$data = array('name' => 'ahmad', 'company' => 'braghimsistemas');
 $files = array('bio' => '/path/to/bio.txt', 'avatar' => '/path/to/avatar.jpg');
 
 $body = Unirest\Request\Body::multipart($data, $files);
@@ -166,8 +158,8 @@ If you wish to further customize the properties of files uploaded you can do so 
 ```php
 $headers = array('Accept' => 'application/json');
 $body = array(
-    'name' => 'ahmad', 
-    'company' => 'mashape'
+    'name' => 'ahmad',
+    'company' => 'braghimsistemas'
     'bio' => Unirest\Request\Body::file('/path/to/bio.txt', 'text/plain'),
     'avatar' => Unirest\Request\Body::file('/path/to/my_avatar.jpg', 'text/plain', 'avatar.jpg')
 );
@@ -176,7 +168,7 @@ $response = Unirest\Request::post('http://mockbin.com/request', $headers, $body)
  ```
 
 **Note**: we did not use the `Unirest\Request\Body::multipart` helper in this example, it is not needed when manually adding files.
- 
+
 ### Custom Body
 
 Sending a custom body such rather than using the `Unirest\Request\Body` helpers is also possible, for example, using a [`serialize`](http://php.net/manual/en/function.serialize.php) body string with a custom `Content-Type`:
@@ -190,10 +182,10 @@ $response = Unirest\Request::post('http://mockbin.com/request', $headers, $body)
 
 ### Authentication
 
-First, if you are using [Mashape][mashape-url]:
+First, if you are using [Mashape][braghimsistemas-url]:
 ```php
 // Mashape auth
-Unirest\Request::setMashapeKey('<mashape_key>');
+Unirest\Request::setMashapeKey('<braghimsistemas_key>');
 ```
 
 Otherwise, passing a username, password *(optional)*, defaults to Basic Authentication:
@@ -211,12 +203,12 @@ If more than one bit is set, Unirest *(at PHP's libcurl level)* will first query
 
 | Method               | Description                                                                                                                                                                                                     |
 | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `CURLAUTH_BASIC`     | HTTP Basic authentication. This is the default choice                                                                                                                                                           | 
-| `CURLAUTH_DIGEST`    | HTTP Digest authentication. as defined in [RFC 2617](http://www.ietf.org/rfc/rfc2617.txt)                                                                                                                       | 
-| `CURLAUTH_DIGEST_IE` | HTTP Digest authentication with an IE flavor. *The IE flavor is simply that libcurl will use a special "quirk" that IE is known to have used before version 7 and that some servers require the client to use.* | 
+| `CURLAUTH_BASIC`     | HTTP Basic authentication. This is the default choice                                                                                                                                                           |
+| `CURLAUTH_DIGEST`    | HTTP Digest authentication. as defined in [RFC 2617](http://www.ietf.org/rfc/rfc2617.txt)                                                                                                                       |
+| `CURLAUTH_DIGEST_IE` | HTTP Digest authentication with an IE flavor. *The IE flavor is simply that libcurl will use a special "quirk" that IE is known to have used before version 7 and that some servers require the client to use.* |
 | `CURLAUTH_NEGOTIATE` | HTTP Negotiate (SPNEGO) authentication. as defined in [RFC 4559](http://www.ietf.org/rfc/rfc4559.txt)                                                                                                           |
 | `CURLAUTH_NTLM`      | HTTP NTLM authentication. A proprietary protocol invented and used by Microsoft.                                                                                                                                |
-| `CURLAUTH_NTLM_WB`   | NTLM delegating to winbind helper. Authentication is performed by a separate binary application. *see [libcurl docs](http://curl.haxx.se/libcurl/c/CURLOPT_HTTPAUTH.html) for more info*                        | 
+| `CURLAUTH_NTLM_WB`   | NTLM delegating to winbind helper. Authentication is performed by a separate binary application. *see [libcurl docs](http://curl.haxx.se/libcurl/c/CURLOPT_HTTPAUTH.html) for more info*                        |
 | `CURLAUTH_ANY`       | This is a convenience macro that sets all bits and thus makes libcurl pick any it finds suitable. libcurl will automatically select the one it finds most secure.                                               |
 | `CURLAUTH_ANYSAFE`   | This is a convenience macro that sets all bits except Basic and thus makes libcurl pick any it finds suitable. libcurl will automatically select the one it finds most secure.                                  |
 | `CURLAUTH_ONLY`      | This is a meta symbol. OR this value together with a single specific auth value to force libcurl to probe for un-restricted auth and if not, only that single auth algorithm is acceptable.                     |
@@ -259,7 +251,7 @@ Unirest\Request::put($url, $headers = array(), $body = null)
 Unirest\Request::patch($url, $headers = array(), $body = null)
 Unirest\Request::delete($url, $headers = array(), $body = null)
 ```
-  
+
 - `url` - Endpoint, address, or uri to be acted upon and requested information from.
 - `headers` - Request Headers as associative array or object
 - `body` - Request Body as associative array or object
@@ -332,7 +324,7 @@ Passing a username, password *(optional)*, defaults to Basic Authentication:
 Unirest\Request::proxyAuth('username', 'password');
 ```
 
-The third parameter, which is a bitmask, will Unirest which HTTP authentication method(s) you want it to use for your proxy authentication. 
+The third parameter, which is a bitmask, will Unirest which HTTP authentication method(s) you want it to use for your proxy authentication.
 
 If more than one bit is set, Unirest *(at PHP's libcurl level)* will first query the site to see what authentication methods it supports and then pick the best one you allow it to use. *For some methods, this will induce an extra network round-trip.*
 
@@ -409,31 +401,3 @@ Unirest\Request::getInfo()
 Unirest\Request::getCurlHandle()
 ```
 
-----
-
-Made with &#9829; from the [Mashape][mashape-url] team
-
-[unirest-logo]: http://cl.ly/image/2P373Y090s2O/Image%202015-10-12%20at%209.48.06%20PM.png
-
-
-[mashape-url]: https://www.mashape.com/
-
-[license-url]: https://github.com/Mashape/unirest-php/blob/master/LICENSE
-
-[gitter-url]: https://gitter.im/Mashape/unirest-php
-[gitter-image]: https://img.shields.io/badge/Gitter-Join%20Chat-blue.svg?style=flat
-
-[travis-url]: https://travis-ci.org/Mashape/unirest-php
-[travis-image]: https://img.shields.io/travis/Mashape/unirest-php.svg?style=flat
-
-[packagist-url]: https://packagist.org/packages/Mashape/unirest-php
-[packagist-license]: https://img.shields.io/packagist/l/Mashape/unirest-php.svg?style=flat
-[packagist-version]: https://img.shields.io/packagist/v/Mashape/unirest-php.svg?style=flat
-[packagist-downloads]: https://img.shields.io/packagist/dm/Mashape/unirest-php.svg?style=flat
-
-[codeclimate-url]: https://codeclimate.com/github/Mashape/unirest-php
-[codeclimate-quality]: https://img.shields.io/codeclimate/github/Mashape/unirest-php.svg?style=flat
-[codeclimate-coverage]: https://img.shields.io/codeclimate/coverage/github/Mashape/unirest-php.svg?style=flat
-
-[versioneye-url]: https://www.versioneye.com/user/projects/54b82450050646ca5c0001f3
-[versioneye-image]: https://img.shields.io/versioneye/d/php/mashape:unirest-php.svg?style=flat
