@@ -29,7 +29,7 @@ To install restuni-php with Composer, just add the following to your `composer.j
 ```json
 {
     "require-dev": {
-        "braghimsistemas/restuni-php": "^7"
+        "braghim-sistemas/restuni-php": "^7"
     }
 }
 ```
@@ -37,7 +37,7 @@ To install restuni-php with Composer, just add the following to your `composer.j
 or by running the following command:
 
 ```shell
-composer require braghimsistemas/restuni-php
+composer require braghim-sistemas/restuni-php ^7
 ```
 
 This will get you the latest version of the reporter and install it. If you do want the master, untagged, version you may use the command below:
